@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Intro to Vue JS</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/vue"></script>
+
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+    </div>
+    <div class="exercise" id="exercise3">
+      <h3>{{ title }}</h3>
+      <pre> 
+    1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below)
+      </pre>
+      <div>
+        <button @click="startEffect">Start Effect</button>
+        <div v-if="highlightCounter >= 0 && highlightCounter > 0"  :class="highlightCounter %3 === 0 ? 'highlight' : 'shrink'">{{ highlightCounter % 3 === 0 ? 'highlighted' : 'shrink' }}</div>
+      <pre>
+    2) Create a couple of CSS classes and attach them via the array syntax
+      </pre>
+      <div :class="[coolClass, beanzClass]">I got no class :(</div>
+      <pre>
+    3) Let the user enter a class (create some example classes) and attach it
+      </pre>
+      <div>
+        <select v-model="userSelectClass">
+            <option value="">Select CSS class bro!</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+        </select>
+        <div
+         id="userSelectedCSS"
+         :class="userSelectClass"
+         :style="{backgroundColor: userSelectClass}"
+        >
+        </div>
+      </div>
+      <pre>
+    4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes
+      </pre>
+      <div>
+        <input type="text">
+        <input type="text">
+        <div @click="startEffect"></div>
+      </div>
+      <pre>
+    5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.
+      </pre>
+      <div>
+        <input type="text">
+        <div></div>
+      </div>
+      <pre>
+    6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button.
+      </pre>
+      <div>
+        <button @click="startCounter">Start Progress</button>
+        <div id="counter" :style="{width: counter > 0 ? counter + '%' : 0}">
+          <span>{{ counter + '%' }}</span></div>
+        </div>
+      </div>
+    </div><!-- end excercise3 -->
+
+    <div class="exercise" id="exercise2">
+      <h3>{{ title }}</h3>
+      <pre>
+1) Show a "result" of 'not there yet' as long as "value" is not equal to 37 - you can change "value" with the buttons. Print 'done' once you did it.
+
+2) Watch for changes in the "result" and reset the "value" after 5 seconds (hint: setTimeout(..., 5000)</pre>
+        <div>
+          <p>Current Value: {{ result = value < 37 ? result : value }}</p>
+          <button @click="value += 5">Add 5</button>
+          <button @click="value += 1">Add 1</button>
+          <p><span v-if="value >= 37">Done! <span> {{ result }}</p>
+          <div>
+              <input type="text">
+              <p>{{ value }}</p>
+          </div>
+      </div>
+
+    </div><!-- end excercise2 -->
+
+    <script src="script.js"></script>
+  </body>
+</html>

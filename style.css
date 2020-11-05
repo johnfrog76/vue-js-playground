@@ -1,0 +1,46 @@
+body {
+  padding: 20px;
+}
+
+pre {
+  margin: 8px;
+  border: 1px dashed #ccc;
+  padding: 8px;
+  max-width: 90%;
+  white-space: pre-wrap;
+}
+
+.exercise {
+ border: 1px solid #000;
+ padding: 24px;
+ margin-bottom: 24px;
+}
+
+#counter {
+  display: block;
+  width: 0%;
+  color: #fff;
+  padding: 2px 0;
+  background-color:#185abc;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+#counter > span {
+  margin-left: 5px;
+}
+
+#userSelectedCSS {
+  width: 25px;
+  height: 25px;
+  background-color: #ccc;
+  margin: 5px;
+}
+
+.shrink {
+  text-shadow: 4px 5px 10px #FF0000;
+}
+
+.highlight {
+  text-shadow: 4px 5px 10px rgb(16, 212, 16);
+}
